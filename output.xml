@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220311 21:19:09.525" rpa="false" schemaversion="2">
+<suite id="s1" name="testPutAndGetTests" source="C:\Users\Daniil\SchoolStuff\CSC301TA\a1\a1marking\autotest\testPutAndGetTests.robot">
+<test id="s1-t1" name="TestAddActor200">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>localhost</arg>
+<arg>http://localhost:8080</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220311 21:19:09.610" level="INFO">Creating Session using : alias=localhost, url=http://localhost:8080, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220311 21:19:09.610" endtime="20220311 21:19:09.610"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220311 21:19:09.611" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20220311 21:19:09.611" endtime="20220311 21:19:09.612"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${params}</var>
+<arg>name=Swetha Maramganty</arg>
+<arg>actorId=nm1</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220311 21:19:09.612" level="INFO">${params} = {'name': 'Swetha Maramganty', 'actorId': 'nm1'}</msg>
+<status status="PASS" starttime="20220311 21:19:09.612" endtime="20220311 21:19:09.612"/>
+</kw>
+<kw name="PUT On Session" library="RequestsLibrary">
+<var>${resp}</var>
+<arg>localhost</arg>
+<arg>/api/v1/addActor</arg>
+<arg>json=${params}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<msg timestamp="20220311 21:19:45.677" level="FAIL">Test timeout 30 seconds exceeded.</msg>
+<status status="FAIL" starttime="20220311 21:19:09.612" endtime="20220311 21:19:45.677"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${resp.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20220311 21:19:45.678" endtime="20220311 21:19:45.678"/>
+</kw>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:19:09.609" endtime="20220311 21:19:45.678">Test timeout 30 seconds exceeded.</status>
+</test>
+<test id="s1-t2" name="Test2AddActorIgnoreExtraParam200">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>localhost</arg>
+<arg>http://localhost:8080</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220311 21:19:45.680" level="INFO">Creating Session using : alias=localhost, url=http://localhost:8080, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220311 21:19:45.679" endtime="20220311 21:19:45.680"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220311 21:19:45.681" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20220311 21:19:45.680" endtime="20220311 21:19:45.681"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${params}</var>
+<arg>name=Arnold Rosenbloom</arg>
+<arg>actorId=nm2</arg>
+<arg>extra=param</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220311 21:19:45.681" level="INFO">${params} = {'name': 'Arnold Rosenbloom', 'actorId': 'nm2', 'extra': 'param'}</msg>
+<status status="PASS" starttime="20220311 21:19:45.681" endtime="20220311 21:19:45.681"/>
+</kw>
+<kw name="PUT On Session" library="RequestsLibrary">
+<var>${resp}</var>
+<arg>localhost</arg>
+<arg>/api/v1/addActor</arg>
+<arg>json=${params}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<msg timestamp="20220311 21:20:20.550" level="FAIL">Test timeout 30 seconds exceeded.</msg>
+<status status="FAIL" starttime="20220311 21:19:45.681" endtime="20220311 21:20:20.551"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${resp.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20220311 21:20:20.552" endtime="20220311 21:20:20.552"/>
+</kw>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:19:45.679" endtime="20220311 21:20:20.552">Test timeout 30 seconds exceeded.</status>
+</test>
+<test id="s1-t3" name="TestAddKevinBacon200">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>localhost</arg>
+<arg>http://localhost:8080</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220311 21:20:20.553" level="INFO">Creating Session using : alias=localhost, url=http://localhost:8080, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220311 21:20:20.553" endtime="20220311 21:20:20.553"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220311 21:20:20.554" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20220311 21:20:20.554" endtime="20220311 21:20:20.554"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${params}</var>
+<arg>name=Kevin Bacon</arg>
+<arg>actorId=nm0000102</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220311 21:20:20.554" level="INFO">${params} = {'name': 'Kevin Bacon', 'actorId': 'nm0000102'}</msg>
+<status status="PASS" starttime="20220311 21:20:20.554" endtime="20220311 21:20:20.554"/>
+</kw>
+<kw name="PUT On Session" library="RequestsLibrary">
+<var>${resp}</var>
+<arg>localhost</arg>
+<arg>/api/v1/addActor</arg>
+<arg>json=${params}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<msg timestamp="20220311 21:20:25.378" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))': /api/v1/addActor</msg>
+<status status="FAIL" starttime="20220311 21:20:20.555" endtime="20220311 21:20:27.415"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${resp.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20220311 21:20:27.415" endtime="20220311 21:20:27.415"/>
+</kw>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:20.553" endtime="20220311 21:20:27.415">Execution terminated by signal</status>
+</test>
+<test id="s1-t4" name="Test3AddActor200">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.416" endtime="20220311 21:20:27.416">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t5" name="TestAddActorKeepExistingNode400">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.417" endtime="20220311 21:20:27.417">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t6" name="TestAddActorBadBodyParam400">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.418" endtime="20220311 21:20:27.418">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t7" name="TestAddMovie200">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.418" endtime="20220311 21:20:27.419">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t8" name="Test2AddMovieIgnoreExtraParam200">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.419" endtime="20220311 21:20:27.419">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t9" name="Test3AddMovie200">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.420" endtime="20220311 21:20:27.420">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t10" name="Test4AddMovie200">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.420" endtime="20220311 21:20:27.421">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t11" name="Test5AddMovie200">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.422" endtime="20220311 21:20:27.422">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t12" name="TestAddMovieKeepExistingNode400">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.424" endtime="20220311 21:20:27.424">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t13" name="TestAddMovieBadBodyParam400">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.425" endtime="20220311 21:20:27.425">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t14" name="TestAddRelation200">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.426" endtime="20220311 21:20:27.427">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t15" name="Test2AddRelationIgnoreExtraParam200">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.428" endtime="20220311 21:20:27.428">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t16" name="Test4AddRelation200">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.429" endtime="20220311 21:20:27.432">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t17" name="Test5AddRelation200">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.433" endtime="20220311 21:20:27.433">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t18" name="Test6AddRelation200">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.434" endtime="20220311 21:20:27.435">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t19" name="Test7AddRelation200">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.436" endtime="20220311 21:20:27.437">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t20" name="TestAddRelationBadBodyParam400">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.440" endtime="20220311 21:20:27.441">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t21" name="TestAddRelationMovieNoExist404">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.442" endtime="20220311 21:20:27.443">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t22" name="TestAddRelationActorNoExist404">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.444" endtime="20220311 21:20:27.445">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t23" name="TestAddRelationBothNoExist404">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.447" endtime="20220311 21:20:27.447">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t24" name="TestGetActor200">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.448" endtime="20220311 21:20:27.449">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t25" name="Test2GetActorIgnoreExtraParam200">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.450" endtime="20220311 21:20:27.450">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t26" name="TestGetActorExistsButNoMovies200">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.452" endtime="20220311 21:20:27.452">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t27" name="TestGetActorBadBodyParam400">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.453" endtime="20220311 21:20:27.454">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t28" name="TestGetActorNoExist404">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.455" endtime="20220311 21:20:27.455">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t29" name="TestGetRelationship200True">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.456" endtime="20220311 21:20:27.457">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t30" name="TestGetRelationshipNoRel200False">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.458" endtime="20220311 21:20:27.458">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t31" name="TestGetRelationshipIgnoreExtraParamNoRel200False">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.459" endtime="20220311 21:20:27.459">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t32" name="TestGetRelationshipIncompleteBodyParam400">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.462" endtime="20220311 21:20:27.463">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t33" name="TestGetRelationshipBothNoExist404">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.464" endtime="20220311 21:20:27.465">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t34" name="TestGetBaconNumber200">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.466" endtime="20220311 21:20:27.466">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t35" name="TestGetBaconNumberIgnoreExtraParam200">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.467" endtime="20220311 21:20:27.467">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t36" name="Test2GetBaconNumberKevinBacon200">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.469" endtime="20220311 21:20:27.469">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t37" name="TestGetBaconNumberBadBodyParam400">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.470" endtime="20220311 21:20:27.470">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t38" name="TestGetBaconNumberIdNoExist404">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.472" endtime="20220311 21:20:27.472">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t39" name="TestGetBaconNumberPathNoExist404">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.473" endtime="20220311 21:20:27.474">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t40" name="TestBaconPath200">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.475" endtime="20220311 21:20:27.475">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t41" name="TestBaconPathIgnoreExtraParam200">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.478" endtime="20220311 21:20:27.485">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t42" name="Test2BaconPathKevinBacon200">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.486" endtime="20220311 21:20:27.487">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t43" name="TestBaconPathBadBodyParam400">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.488" endtime="20220311 21:20:27.488">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t44" name="TestBaconPathIdNoExist404">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.489" endtime="20220311 21:20:27.490">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t45" name="TestBaconPathPathNoExist404">
+<tag>robot:exit</tag>
+<timeout value="30 seconds"/>
+<status status="FAIL" starttime="20220311 21:20:27.491" endtime="20220311 21:20:27.492">Test execution stopped due to a fatal error.</status>
+</test>
+<status status="FAIL" starttime="20220311 21:19:09.526" endtime="20220311 21:20:27.494"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="45" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="3" skip="0" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
+</tag>
+<suite>
+<stat pass="0" fail="45" skip="0" id="s1" name="testPutAndGetTests">testPutAndGetTests</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220311 21:20:25.378" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))': /api/v1/addActor</msg>
+</errors>
+</robot>
